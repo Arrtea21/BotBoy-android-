@@ -1,6 +1,6 @@
 # mini_pro_bot
 
-A new Flutter application.
+A Flutter application.Hopefully a Chatbot with ML and AI .. 👀
 
 ## Getting Started
 
@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+# Stuff
+
+The main fuction / entry point and the Application_UI is in /lib/main.dart file
+
+botlogic.dart Dictates the functions of the bot used to generate and send the reply.
