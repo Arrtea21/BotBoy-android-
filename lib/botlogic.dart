@@ -1,7 +1,11 @@
-import 'somedatabaseig'
+//import 'somedatabaseig'
 
 String reply({String userText})
 {
-	print('Funtion called');
-	return 'called';
+	if(userText=='Hello')
+		return 'Hello! How are you';
+	if(userText=='good')
+		return 'Noice';
+	if(userText==':)')
+		return ':/';
 }

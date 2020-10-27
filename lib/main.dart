@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'botlogic.dart';
 
 void main() {
   runApp(SplashScreen());
@@ -172,13 +173,13 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     });
     _focusNode.requestFocus();
     message.animationController.forward();
-    zeroTwo();
+    zeroTwo(Text:text);
   }
 
-  void zeroTwo(){
+  void zeroTwo({String Text}){
     print('called');
     ChatMessage message2 = ChatMessage(
-      text: "yo bot here",
+      text: reply(userText:Text),
       animationController: AnimationController(
         duration: const Duration(milliseconds: 700),
         vsync: this,
