@@ -1,6 +1,6 @@
 # mini_pro_bot
 
-A Flutter application.Hopefully a Chatbot with ML and AI .. 👀
+A Flutter application.Using Snatchbot APi at https://snatchbot.me/ .. 👀
 
 ## Getting Started
 
@@ -20,3 +20,5 @@ samples, guidance on mobile development, and a full API reference.
 The main fuction / entry point and the Application_UI is in /lib/main.dart file
 
 botlogic.dart Dictates the functions of the bot used to generate and send the reply.
+
+botmodel.dart has code to decode the json response through Snatchbots REST api .
