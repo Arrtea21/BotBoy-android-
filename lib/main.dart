@@ -5,7 +5,7 @@ void main() {
   runApp(SplashScreen());
 }
 
-List userNames = ['Arrtea','ZeroTwo'];
+List userNames = ['User','theOutput'];
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -51,7 +51,7 @@ class SplashScreen extends StatelessWidget {
                   color: Colors.blueGrey,
                 ),
               ),
-              FlatButton(
+              TextButton(
                 onPressed: (){
                   runApp(DaBot());
                 },
@@ -96,7 +96,7 @@ class DaBot extends StatelessWidget {
 
 class ChatMessage extends StatelessWidget {
   ChatMessage({this.text, this.animationController, this.num});
-  final String text;
+  var text;
   final AnimationController animationController;
   int num = 1;
   @override
@@ -119,23 +119,25 @@ class ChatMessage extends StatelessWidget {
                   )
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(userNames[num], style: TextStyle(color: Colors.black)),
-                  Container(
-                    margin: EdgeInsets.only(top: 5.0),
-                    child: Text(text,
-                      style: TextStyle(color: Colors.white),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(userNames[num], style: TextStyle(color: Colors.black)),
+                    Container(
+                      margin: EdgeInsets.only(top: 5.0,),
+                      child: Text(text,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             )
           ],
@@ -176,10 +178,10 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
     zeroTwo(Text:text);
   }
 
-  void zeroTwo({String Text}){
+  void zeroTwo({String Text}) async{
     print('called');
     ChatMessage message2 = ChatMessage(
-      text: reply(userText:Text),
+      text:  await reply(userText:Text),
       animationController: AnimationController(
         duration: const Duration(milliseconds: 700),
         vsync: this,
