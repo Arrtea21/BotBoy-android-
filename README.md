@@ -15,6 +15,8 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+ - Add Endpoint url in /lib/botlogic.dart line#9 .
+
 # Stuff
 
 The main fuction / entry point and the Application_UI is in /lib/main.dart file
