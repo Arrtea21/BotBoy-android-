@@ -6,7 +6,7 @@ import 'botmodel.dart';
 Future<String> reply({String userText})
 async{
 	String str = "work in progress";
-	var url = Uri.parse('https://account.snatchbot.me/channels/api/api/-----');
+	var url = Uri.parse('https://account.snatchbot.me/channels/api/api/id149287/app42069/aps420botboi69?user_id=AndroidApp');
 	Map data = {
 		"message": "$userText"
 	};
@@ -20,24 +20,25 @@ async{
 			print(jsonMap.messages[0].message);
 			str = jsonMap.messages[0].message;
 		}
+	str = format(str);
 	return str ;
 }
 
-/*String reply({String userText})
+String format(String response)
 {
 	int i=0, x=0;
 	String str;
-	List<String> tokens = new List<String>();
-	for(i=0;i<userText.length;i++)
+	List<String> tokens = <String>[];
+	for(i=0;i<response.length;i++)
 	{
-		if(userText[i]==' ')
+		if(response[i]==' ')
 		{
-			tokens.add(userText.substring(x,i));
+			tokens.add(response.substring(x,i));
 			x=i+1;
 		}
-		if(i==userText.length-1)
+		if(i==response.length-1)
 		{
-			tokens.add(userText.substring(x,i+1));
+			tokens.add(response.substring(x,i+1));
 			x=i+1;
 		}
 	}
@@ -50,4 +51,4 @@ async{
 		}
 	print(tokens);
 	return str;
-}*/
+}

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:html/parser.dart' as htmlparser;
+import 'package:html/dom.dart' as dom;
+import 'package:url_launcher/url_launcher.dart';
 import 'botlogic.dart';
 
 void main() {
@@ -123,7 +127,7 @@ class ChatMessage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: Column(
@@ -132,8 +136,11 @@ class ChatMessage extends StatelessWidget {
                     Text(userNames[num], style: TextStyle(color: Colors.black)),
                     Container(
                       margin: EdgeInsets.only(top: 5.0,),
-                      child: Text(text,
-                        style: TextStyle(color: Colors.white),
+                      child: SelectableHtml(data: text,
+                          onLinkTap: (url, RenderContext context, Map<String, String> attributes, element) async {
+                            await launch(url);//open URL in webview, or launch URL in browser, or any other logic here
+                          },
+                        //style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ],
